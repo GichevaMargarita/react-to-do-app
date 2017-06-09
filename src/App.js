@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import "./App.scss";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="css-todo-item">
+                <div className="todo-header">
+                    <h2>Title</h2>
+                </div>
+                <div className="todo-list">
+                    <div className="active-items">
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                    </div>
+                    <div className="completed-items">
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                        <label><input type="checkbox"/>Name</label>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
