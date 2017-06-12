@@ -8,13 +8,16 @@
   },
   "devDependencies": {
     "create-react-app-sass": "^1.1.0",
+    "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts-with-sass start",
     "build": "react-scripts-with-sass build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "homepage" : "http://GichevaMargarita.github.io/react-to-do-app"
+  "homepage": " https://gichevamargarita.github.io/react-to-do-app"
 }
