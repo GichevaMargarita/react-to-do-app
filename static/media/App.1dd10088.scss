@@ -1,0 +1,46 @@
+$primary-color-dark:   #0288D1;
+$primary-color:        #03A9F4;
+$primary-color-light:  #B3E5FC;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF4081;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+.css-todo-item {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+}
+
+.todo-header {
+    background: $primary-color;
+    position: relative;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    vertical-align: middle;
+    padding: 1px 25px;
+}
+
+.todo-header h2{
+    font-weight: 300;
+}
+
+.todo-list label {
+    display: block;
+    border-bottom: 1px solid #DADADA;
+    padding: 16px 0;
+}
+
+.todo-list > .completed-items label {
+    color: #9a9a9a;
+}
+
+.todo-list input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/*https://codepen.io/Sambego/pen/zDLxe/       TODO SCSS*/
