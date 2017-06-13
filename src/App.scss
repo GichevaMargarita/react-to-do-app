@@ -27,15 +27,22 @@ $divider-color: #BDBDBD;
     }
   }
 
+  .todo-settings{
+    border-bottom: 1px solid $divider-color;
+    padding: 10px 0;
+    font-size: 14px;
+    color:$secondary-text-color;
+  }
+
   .todo-list {
     label {
       display: block;
-      border-bottom: 1px solid #DADADA;
+      border-bottom: 1px solid $divider-color;
       padding: 16px 0;
     }
 
     .completed-items label {
-      color: #9a9a9a;
+      color: $secondary-text-color;
     }
 
     input[type="checkbox"] {
