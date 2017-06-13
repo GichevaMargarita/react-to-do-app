@@ -5,10 +5,11 @@ import registerServiceWorker from './registerServiceWorker';
 
 var data=[{
     name: "Name 1",
-    isDone: false
+    isActive: true
 },{
     name: "Name 2",
-    isDone: true
+    isActive: false
 }];
 ReactDOM.render(<App data={data}/>, document.getElementById('root'));
+// ReactDOM.render(<App data={}/>, document.getElementById('root'));
 registerServiceWorker();

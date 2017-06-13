@@ -8,25 +8,24 @@ class App extends Component {
     render() {
 
         var data = this.props.data;
-        var todoItems = [];
         var activeItems = [];
         var completedItems = [];
 
         if (data.length > 0) {
-            todoItems = data.map(function(item, index) {
-                if(item.isDone){
-                    activeItems.push(<label><input type="checkbox"  checked={!item.isDone}/>{item.name}</label>);
+            data.map(function (item, index) {
+                if (item.isActive) {
+                    activeItems.push(<label><input type="checkbox" checked={item.isActive}/>{item.name}</label>);
                 }
                 else {
-                    completedItems.push(<label><input type="checkbox" checked={!item.isDone}/>{item.name}</label>);
+                    completedItems.push(<label><input type="checkbox" checked={item.isActive}/>{item.name}</label>);
                 }
             })
         } else {
-            todoItems = <p>Nothing to do</p>
+            activeItems = <p>Nothing to do</p>
         }
 
         return (
-            <div className="css-todo-item">
+            <div className="todo-item">
                 <div className="todo-header">
                     <h2>Title</h2> <span className="minimazeItem">x</span>
                 </div>
