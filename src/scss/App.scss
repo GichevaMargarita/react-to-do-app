@@ -20,18 +20,41 @@ $divider-color: #BDBDBD;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     height: 70px;
     vertical-align: middle;
-    padding: 1px 25px;
+    padding-left: 25px;
 
     h2 {
       font-weight: 300;
+      display: inline-block;
     }
+
+    span:after{
+      font-family: FontAwesome;
+      content: "\f142";
+      float: right;
+      margin: 27px 18px;
+    }
+
   }
 
   .todo-settings{
     border-bottom: 1px solid $divider-color;
-    padding: 10px 0;
-    font-size: 14px;
     color:$secondary-text-color;
+    padding: 8px 15px 8px 25px;
+    font-size: 13px;
+
+    span:nth-child(2){
+      float: right;
+    }
+
+    .showCompleted:after{
+      font-family: FontAwesome;
+      content: "\f078";
+    }
+
+    .hideCompleted:after{
+      font-family: FontAwesome;
+      content: "\f077";
+    }
   }
 
   .todo-list {
@@ -41,13 +64,29 @@ $divider-color: #BDBDBD;
       padding: 16px 0;
     }
 
+    label:before{
+      font-family: FontAwesome;
+      content: "\f096";
+      margin-left: 25px;
+    }
+
     .completed-items label {
       color: $secondary-text-color;
+    }
+
+    .completed-items label:before{
+      font-family: FontAwesome;
+      content: "\f046";
+      margin-left: 25px;
     }
 
     input[type="checkbox"] {
       -webkit-appearance: none;
       appearance: none;
+    }
+
+    .completed-items{
+      display: none;
     }
   }
 }

@@ -1,1 +1,1 @@
-React To Do App implemented with create-react-app
+React To Do App was implemented with create-react-app

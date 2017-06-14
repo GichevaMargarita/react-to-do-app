@@ -1,8 +1,13 @@
 import React, {Component} from "react";
 import "../scss/App.css";
+import $ from 'jquery';
 
 class App extends Component {
 
+    showCompletedItems(e) {
+        $(e.target).toggleClass("showCompleted hideCompleted");
+        $('.completed-items').slideToggle();
+    }
 
     render() {
 
@@ -26,7 +31,7 @@ class App extends Component {
         return (
             <div className="todo-item">
                 <div className="todo-header">
-                    <h2>Title</h2> <span className="minimazeItem">x</span>
+                    <h2>Title</h2><span/>
                 </div>
                 <div className="todo-list">
                     <div className="active-items">
@@ -34,7 +39,7 @@ class App extends Component {
                     </div>
                     <div className="todo-settings">
                         <span>({data.length}) All ({activeItems.length}) Active ({completedItems.length}) Completed</span>
-                        <span className="showCompleted">V</span>
+                        <span className="showCompleted" onClick={this.showCompletedItems}/>
                     </div>
                     <div className="completed-items">
                         {completedItems}
