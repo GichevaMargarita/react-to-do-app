@@ -6,6 +6,7 @@ $accent-color: #FF4081;
 $primary-text-color: #212121;
 $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
+$iconFont: FontAwesome;
 
 .todo-item {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -27,45 +28,33 @@ $divider-color: #BDBDBD;
       display: inline-block;
     }
 
-    span:after{
-      font-family: FontAwesome;
+    span:after {
+      font-family: $iconFont;
       content: "\f142";
       float: right;
       margin: 27px 18px;
     }
-
   }
 
-  .new-todo-item{
+  .new-todo-item {
     padding: 16px 13px;
     border-bottom: 1px solid $divider-color;
 
-    input[type='text']{
+    input[type='text'] {
       border: none;
       font-size: 16px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
     }
 
-    input[type='text']:focus{
-      border: none;
-      outline: none;
-    }
-
-    span:after{
-      font-family: FontAwesome;
+    span:after {
+      font-family: $iconFont;
       content: "\f067";
       color: $secondary-text-color;
       margin-right: 15px;
-    }
-  }
-
-  .todo-settings{
-    border-bottom: 1px solid $divider-color;
-    color:$secondary-text-color;
-    padding: 8px 15px 8px 13px;
-    font-size: 13px;
-
-    .currentTab{
-      color: $primary-color-dark;
     }
   }
 
@@ -76,47 +65,72 @@ $divider-color: #BDBDBD;
       padding: 16px 0;
     }
 
-    input[type="checkbox"]:before{
-      font-family: FontAwesome;
-      content: "\f096";
-      font-size: 15px;
-      margin: 0 10px;
-    }
-
-    .completed-items label {
-      color: $secondary-text-color;
-    }
-
-    input[type="checkbox"]:checked:before{
-      font-family: FontAwesome;
-      content: "\f046";
-      font-size: 15px;
-      color: $secondary-text-color;
-      margin: 0 10px;
-    }
-
     input[type="checkbox"] {
       -webkit-appearance: none;
       appearance: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:before {
+        font-family: $iconFont;
+        content: "\f096";
+        font-size: 15px;
+        margin: 0 10px;
+      }
+
+      &:checked:before {
+        font-family: $iconFont;
+        content: "\f046";
+        font-size: 15px;
+        color: $secondary-text-color;
+        margin: 0 10px;
+      }
     }
 
-    input[type="checkbox"]:focus {
-      outline: none;
+    .completed-items {
+      display: none;
+
+      label {
+        color: $secondary-text-color;
+        text-decoration: line-through;
+      }
     }
 
-    div > label:hover{
-      span:after{
-        font-family: FontAwesome;
+    div > label:hover {
+      span:after {
+        font-family: $iconFont;
         content: "\f00d";
         float: right;
         margin-right: 15px;
         margin-top: 3px;
         color: $secondary-text-color;
 
-        &:hover{
+        &:hover {
           color: $primary-text-color;
         }
       }
+    }
+  }
+
+  .todo-settings {
+    border-bottom: 1px solid $divider-color;
+    color: $secondary-text-color;
+    padding: 8px 15px 8px 13px;
+    font-size: 13px;
+
+    .actionForCompleted{
+      font-family: $iconFont;
+      float: right;
+    }
+
+    .showCompleted:after {
+      content: "\f078";
+    }
+
+    .hideCompleted:after {
+      content: "\f077";
     }
   }
 }
