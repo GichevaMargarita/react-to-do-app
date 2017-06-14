@@ -42,18 +42,8 @@ $divider-color: #BDBDBD;
     padding: 8px 15px 8px 25px;
     font-size: 13px;
 
-    span:nth-child(2){
-      float: right;
-    }
-
-    .showCompleted:after{
-      font-family: FontAwesome;
-      content: "\f078";
-    }
-
-    .hideCompleted:after{
-      font-family: FontAwesome;
-      content: "\f077";
+    .currentTab{
+      color: $primary-color-dark;
     }
   }
 
@@ -64,20 +54,23 @@ $divider-color: #BDBDBD;
       padding: 16px 0;
     }
 
-    label:before{
+    input[type="checkbox"]:before{
       font-family: FontAwesome;
       content: "\f096";
-      margin-left: 25px;
+      margin-left: 23px;
+      font-size: 15px;
     }
 
     .completed-items label {
       color: $secondary-text-color;
     }
 
-    .completed-items label:before{
+    input[type="checkbox"]:checked:before{
       font-family: FontAwesome;
       content: "\f046";
-      margin-left: 25px;
+      margin-left: 23px;
+      font-size: 15px;
+      color: $secondary-text-color;
     }
 
     input[type="checkbox"] {
@@ -85,8 +78,8 @@ $divider-color: #BDBDBD;
       appearance: none;
     }
 
-    .completed-items{
-      display: none;
+    input[type="checkbox"]:focus {
+      outline: none;
     }
   }
 }

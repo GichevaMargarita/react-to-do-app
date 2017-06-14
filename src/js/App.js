@@ -5,8 +5,18 @@ import $ from 'jquery';
 class App extends Component {
 
     showCompletedItems(e) {
-        $(e.target).toggleClass("showCompleted hideCompleted");
-        $('.completed-items').slideToggle();
+        $('.active-items').hide();
+        $('.completed-items').show();
+    }
+
+    showActiveItems(e) {
+        $('.completed-items').hide();
+        $('.active-items').show();
+    }
+
+    showAllItems(e){
+        $('.active-items').show();
+        $('.completed-items').show();
     }
 
     render() {
@@ -16,12 +26,12 @@ class App extends Component {
         var completedItems = [];
 
         if (data.length > 0) {
-            data.map(function (item, index) {
+            data.map(function (item) {
                 if (item.isActive) {
-                    activeItems.push(<label><input type="checkbox" checked={item.isActive}/>{item.name}</label>);
+                    activeItems.push(<label><input type="checkbox" checked={!item.isActive}/>{item.name}</label>);
                 }
                 else {
-                    completedItems.push(<label><input type="checkbox" checked={item.isActive}/>{item.name}</label>);
+                    completedItems.push(<label><input type="checkbox" checked={!item.isActive}/>{item.name}</label>);
                 }
             })
         } else {
@@ -37,12 +47,15 @@ class App extends Component {
                     <div className="active-items">
                         {activeItems}
                     </div>
-                    <div className="todo-settings">
-                        <span>({data.length}) All ({activeItems.length}) Active ({completedItems.length}) Completed</span>
-                        <span className="showCompleted" onClick={this.showCompletedItems}/>
-                    </div>
                     <div className="completed-items">
                         {completedItems}
+                    </div>
+                    <div className="todo-settings">
+                        <span>
+                            <span className="currentTab" onClick={this.showAllItems}>({data.length}) All </span>
+                            <span onClick={this.showActiveItems}>({activeItems.length}) Active </span>
+                            <span onClick={this.showCompletedItems}>({completedItems.length}) Completed</span>
+                        </span>
                     </div>
                 </div>
             </div>
