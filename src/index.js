@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './js/App';
+import ToDoModel from './js/ToDoModel';
 
 var data=[{
     name: "Name 1",
@@ -10,4 +10,4 @@ var data=[{
     isActive: false
 }];
 
-ReactDOM.render(<App data={data}/>, document.getElementById('root'));
+ReactDOM.render(<ToDoModel data={data} title="Shopping List"/>, document.getElementById('root'));
