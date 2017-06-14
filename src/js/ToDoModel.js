@@ -3,8 +3,8 @@ import "../scss/App.css";
 import $ from "jquery";
 import ToDoItem from "./ToDoItem";
 
-const ESCAPE_KEY = 27;
-const ENTER_KEY = 13;
+let activeItems = [];
+let completedItems = [];
 
 class ToDoModel extends Component {
     constructor(props) {
@@ -15,42 +15,18 @@ class ToDoModel extends Component {
         };
     }
 
-    // handleKeyDown (event) {
-    //     if (event.which === ESCAPE_KEY) {
-    //         this.setState({title: this.props.title});
-    //     } else if (event.which === ENTER_KEY) {
-    //         this.handleSubmit(event);
-    //     }
-    // }
-    //
-    // handleSubmit(event){
-    //     if(this.state.title.trim()){
-    //         this.setState({title: this.props.title});
-    //     }else{
-    //
-    //     }
-    // }
-
     showCompletedItems(e) {
-        $('.active-items').hide();
-        $('.completed-items').show();
+        $(e.target).toggleClass("showCompleted hideCompleted");
+        $('.completed-items').slideToggle();
     }
 
-    showActiveItems(e) {
-        $('.completed-items').hide();
-        $('.active-items').show();
-    }
-
-    showAllItems(e) {
-        $('.active-items').show();
-        $('.completed-items').show();
+    addNewItem(name){
+        activeItems.push(<ToDoItem name={name} isDone='false'/>);
     }
 
     render() {
 
-        var data = this.state.data;
-        var activeItems = [];
-        var completedItems = [];
+        let data = this.state.data;
 
         if (data.length > 0) {
             data.map(function (item) {
@@ -61,8 +37,6 @@ class ToDoModel extends Component {
                     completedItems.push(<ToDoItem name={item.name} isDone={!item.isActive}/>);
                 }
             })
-        } else {
-            activeItems = <p>Nothing to do</p>
         }
 
         return (
@@ -77,19 +51,25 @@ class ToDoModel extends Component {
                     </div>
 
                     <div className="new-todo-item">
-                        <span/><input type="text" placeholder="What needs to be done?"/>
+                        <span/>
+                        <input
+                            type="text"
+                            placeholder="What needs to be done?"
+                            onChange={this.addNewItem(this.value)}
+                        />
+                    </div>
+
+                    <div className="todo-settings">
+                        <span>
+                            <span onClick={this.showCompletedItems}>({completedItems.length}) Completed Items </span>
+                            <span className="actionForCompleted showCompleted" onClick={this.showCompletedItems}/>
+                        </span>
                     </div>
 
                     <div className="completed-items">
                         {completedItems}
                     </div>
-                    <div className="todo-settings">
-                        <span>
-                            <span className="currentTab" onClick={this.showAllItems}>({data.length}) All </span>
-                            <span onClick={this.showActiveItems}>({activeItems.length}) Active </span>
-                            <span onClick={this.showCompletedItems}>({completedItems.length}) Completed</span>
-                        </span>
-                    </div>
+
                 </div>
             </div>
         );
