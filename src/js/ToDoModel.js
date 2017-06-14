@@ -1,8 +1,35 @@
 import React, {Component} from "react";
 import "../scss/App.css";
-import $ from 'jquery';
+import $ from "jquery";
+import ToDoItem from "./ToDoItem";
 
-class App extends Component {
+const ESCAPE_KEY = 27;
+const ENTER_KEY = 13;
+
+class ToDoModel extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: props.title,
+            data: props.data
+        };
+    }
+
+    // handleKeyDown (event) {
+    //     if (event.which === ESCAPE_KEY) {
+    //         this.setState({title: this.props.title});
+    //     } else if (event.which === ENTER_KEY) {
+    //         this.handleSubmit(event);
+    //     }
+    // }
+    //
+    // handleSubmit(event){
+    //     if(this.state.title.trim()){
+    //         this.setState({title: this.props.title});
+    //     }else{
+    //
+    //     }
+    // }
 
     showCompletedItems(e) {
         $('.active-items').hide();
@@ -14,24 +41,24 @@ class App extends Component {
         $('.active-items').show();
     }
 
-    showAllItems(e){
+    showAllItems(e) {
         $('.active-items').show();
         $('.completed-items').show();
     }
 
     render() {
 
-        var data = this.props.data;
+        var data = this.state.data;
         var activeItems = [];
         var completedItems = [];
 
         if (data.length > 0) {
             data.map(function (item) {
                 if (item.isActive) {
-                    activeItems.push(<label><input type="checkbox" checked={!item.isActive}/>{item.name}</label>);
+                    activeItems.push(<ToDoItem name={item.name} isDone={!item.isActive}/>);
                 }
                 else {
-                    completedItems.push(<label><input type="checkbox" checked={!item.isActive}/>{item.name}</label>);
+                    completedItems.push(<ToDoItem name={item.name} isDone={!item.isActive}/>);
                 }
             })
         } else {
@@ -41,12 +68,18 @@ class App extends Component {
         return (
             <div className="todo-item">
                 <div className="todo-header">
-                    <h2>Title</h2><span/>
+                    <h2>{this.state.title}</h2><span/>
                 </div>
+
                 <div className="todo-list">
                     <div className="active-items">
                         {activeItems}
                     </div>
+
+                    <div className="new-todo-item">
+                        <span/><input type="text" placeholder="What needs to be done?"/>
+                    </div>
+
                     <div className="completed-items">
                         {completedItems}
                     </div>
@@ -63,4 +96,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default ToDoModel;
