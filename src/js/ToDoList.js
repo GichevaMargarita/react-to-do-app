@@ -15,6 +15,8 @@ class ToDoList extends Component {
         this.state = {
             todoItems: this.props.todoItems
         };
+
+        this.addNewToDoItem = this.addNewToDoItem.bind(this);
     }
 
     showCompletedItems(e) {
@@ -45,12 +47,12 @@ class ToDoList extends Component {
 
         if (todoItems.length > 0) {
             todoItems.map(function (item, index) {
-                let todoItem = <ToDoItem name={item.name} isDone={!item.isActive} key={index}/>;
-                if (item.isActive) {
-                    activeItems.push(todoItem);
+                let todoItem = <ToDoItem name={item.name} isDone={item.isDone} key={index}/>;
+                if (item.isDone) {
+                    completedItems.push(todoItem);
                 }
                 else {
-                    completedItems.push(todoItem);
+                    activeItems.push(todoItem);
                 }
             })
         }

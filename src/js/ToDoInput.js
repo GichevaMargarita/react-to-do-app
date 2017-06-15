@@ -26,7 +26,10 @@ class ToDoInput extends Component {
     }
 
     addNewToDoItem(){
-        // this.props.onChange();
+        if(this.state.value) {
+            this.props.onComplete(this.state.value);
+        }
+        this.setState({value: ''});
     }
 
     handleKeyDown(event) {
