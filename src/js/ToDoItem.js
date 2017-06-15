@@ -12,6 +12,16 @@ class ToDoItem extends Component {
             isDone: this.props.isDone,
             onDestroy: this.props.onDestroy
         };
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(){
+        if(this.state.isDone){
+            this.setState({isDone: false});
+        }else{
+            this.setState({isDone: true});
+        }
     }
 
     render(){
@@ -21,6 +31,7 @@ class ToDoItem extends Component {
                     <input
                         type="checkbox"
                         checked={this.state.isDone}
+                        onChange={this.handleChange}
                     />
                     {this.state.name}
                     <span onClick={this.state.onDestroy}/>

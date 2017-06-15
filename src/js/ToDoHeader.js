@@ -16,7 +16,6 @@ class ToDoHeader extends Component {
 
     handleChange(event){
         this.setState({name: event.target.value});
-        // this.props.onChange(this.state.name);
     }
 
     render() {
