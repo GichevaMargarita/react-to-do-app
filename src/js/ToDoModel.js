@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "../scss/App.css";
 import $ from "jquery";
 import ToDoItem from "./ToDoItem";
+import ToDoInput from "./ToDoInput";
 
 let activeItems = [];
 let completedItems = [];
@@ -13,6 +14,8 @@ class ToDoModel extends Component {
             title: props.title,
             data: props.data
         };
+
+        this.addNewItem = this.addNewItem.bind(this);
     }
 
     showCompletedItems(e) {
@@ -20,8 +23,11 @@ class ToDoModel extends Component {
         $('.completed-items').slideToggle();
     }
 
-    addNewItem(name){
-        activeItems.push(<ToDoItem name={name} isDone='false'/>);
+    addNewItem(itemName){
+        let data = this.state.data;
+        data.push({name: itemName, isDone: false});
+
+        this.setState({data: data});
     }
 
     render() {
@@ -50,14 +56,7 @@ class ToDoModel extends Component {
                         {activeItems}
                     </div>
 
-                    <div className="new-todo-item">
-                        <span/>
-                        <input
-                            type="text"
-                            placeholder="What needs to be done?"
-                            onChange={this.addNewItem(this.value)}
-                        />
-                    </div>
+                    <ToDoInput addNewToDoItem={this.addNewItem}/>
 
                     <div className="todo-settings">
                         <span>
