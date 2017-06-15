@@ -8,9 +8,9 @@ class ToDoItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: props.name,
-            isDone: props.isDone,
-            // onDestroy:props.onDestroy
+            name: this.props.name,
+            isDone: this.props.isDone,
+            onDestroy: this.props.onDestroy
         };
     }
 
@@ -23,9 +23,8 @@ class ToDoItem extends Component {
                         checked={this.state.isDone}
                     />
                     {this.state.name}
-                    <span/>
+                    <span onClick={this.state.onDestroy}/>
                 </label>
-                {/*<span onClick={this.state.onDestroy}/>*/}
             </div>
         );
     };

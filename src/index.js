@@ -10,4 +10,4 @@ var data=[{
     isActive: false
 }];
 
-ReactDOM.render(<ToDoModel data={data} title="Shopping List"/>, document.getElementById('root'));
+ReactDOM.render(<ToDoModel data={data}/>, document.getElementById('root'));
