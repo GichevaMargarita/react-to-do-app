@@ -23,6 +23,7 @@ class ToDoItem extends Component {
         }else{
             this.setState({isDone: true});
         }
+        this.props.onUpdate(this.state.name, this.state.isDone);
     }
 
     destroyItem(){
@@ -39,7 +40,8 @@ class ToDoItem extends Component {
                         onChange={this.handleChange}
                     />
                     {this.state.name}
-                    <span onClick={this.destroyItem}/>
+                    <span/>
+                    {/*<span onClick={this.destroyItem}/>*/}
                 </label>
             </div>
         );

@@ -18,6 +18,7 @@ class ToDoList extends Component {
 
         this.addNewToDoItem = this.addNewToDoItem.bind(this);
         this.deleteToDoItem = this.deleteToDoItem.bind(this);
+        this.updateToDoItem = this.updateToDoItem.bind(this);
     }
 
     showCompletedItems(e) {
@@ -25,7 +26,7 @@ class ToDoList extends Component {
         $('.completed-items').slideToggle();
     }
 
-    addNewToDoItem(itemName){
+    addNewToDoItem(itemName) {
         let currentItems = this.state.todoItems;
         currentItems.push({
             name: itemName,
@@ -37,15 +38,28 @@ class ToDoList extends Component {
         });
     }
 
-    deleteToDoItem(itemName){
+    deleteToDoItem(itemName) {
         let currentItems = this.state.todoItems;
         let index = -1;
-        $.each(currentItems, (itemIndex, item) =>{
-            if(item.name === itemName){
+        $.each(currentItems, (itemIndex, item) => {
+            if (item.name === itemName) {
                 index = itemIndex;
             }
         });
         currentItems.splice(index, 1);
+
+        this.setState({
+            todoItems: currentItems
+        });
+    }
+
+    updateToDoItem(itemName, itemIsDone) {
+        let currentItems = this.state.todoItems;
+        $.each(currentItems, (itemIndex, item) => {
+            if (item.name === itemName) {
+                item.isDone = itemIsDone;
+            }
+        });
 
         this.setState({
             todoItems: currentItems
@@ -60,17 +74,22 @@ class ToDoList extends Component {
 
         if (todoItems.length > 0) {
             todoItems.map((item, index) => {
-                let todoItem = <ToDoItem name={item.name} isDone={item.isDone} key={index} onDestroy={this.deleteToDoItem}/>;
-                if (item.isDone) {
-                    completedItems.push(todoItem);
+                let todoItem = <ToDoItem
+                    name={item.name}
+                    isDone={item.isDone}
+                    key={index}
+                    onDestroy={this.deleteToDoItem}
+                    onUpdate={this.updateToDoItem}/>;
+                        if (item.isDone) {
+                        completedItems.push(todoItem);
+                    }
+                        else {
+                        activeItems.push(todoItem);
+                    }
+                    })
                 }
-                else {
-                    activeItems.push(todoItem);
-                }
-            })
-        }
 
-        return (
+                return (
             <div className="todo-list">
                 <div className="active-items">
                     {activeItems}
@@ -89,9 +108,9 @@ class ToDoList extends Component {
                     {completedItems}
                 </div>
             </div>
-        );
-    }
+                );
+                }
 
-}
+                }
 
-export default ToDoList;
+                export default ToDoList;
