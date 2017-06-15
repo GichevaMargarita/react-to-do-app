@@ -17,6 +17,7 @@ class ToDoList extends Component {
         };
 
         this.addNewToDoItem = this.addNewToDoItem.bind(this);
+        this.deleteToDoItem = this.deleteToDoItem.bind(this);
     }
 
     showCompletedItems(e) {
@@ -36,8 +37,19 @@ class ToDoList extends Component {
         });
     }
 
-    deleteToDoItem(){
+    deleteToDoItem(itemName){
+        let currentItems = this.state.todoItems;
+        let index = -1;
+        $.each(currentItems, (itemIndex, item) =>{
+            if(item.name === itemName){
+                index = itemIndex;
+            }
+        });
+        currentItems.splice(index, 1);
 
+        this.setState({
+            todoItems: currentItems
+        });
     }
 
     render() {
@@ -45,9 +57,10 @@ class ToDoList extends Component {
         let activeItems = [];
         let completedItems = [];
 
+
         if (todoItems.length > 0) {
-            todoItems.map(function (item, index) {
-                let todoItem = <ToDoItem name={item.name} isDone={item.isDone} key={index}/>;
+            todoItems.map((item, index) => {
+                let todoItem = <ToDoItem name={item.name} isDone={item.isDone} key={index} onDestroy={this.deleteToDoItem}/>;
                 if (item.isDone) {
                     completedItems.push(todoItem);
                 }

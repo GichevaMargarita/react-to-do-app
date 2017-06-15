@@ -3,8 +3,6 @@
  */
 import React, {Component} from "react";
 import "../scss/App.css";
-// import $ from "jquery";
-// import ToDoItem from "./ToDoItem";
 
 const ESCAPE_KEY = 27;
 const ENTER_KEY = 13;

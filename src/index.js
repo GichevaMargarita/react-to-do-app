@@ -4,10 +4,10 @@ import ToDoModel from './js/ToDoModel';
 
 var data=[{
     name: "Name 1",
-    isDone: true
+    isDone: false
 },{
     name: "Name 2",
-    isDone: false
+    isDone: true
 }];
 
 ReactDOM.render(<ToDoModel data={data}/>, document.getElementById('root'));

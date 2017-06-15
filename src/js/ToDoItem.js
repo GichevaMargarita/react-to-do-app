@@ -9,11 +9,12 @@ class ToDoItem extends Component {
         super(props);
         this.state = {
             name: this.props.name,
-            isDone: this.props.isDone,
-            onDestroy: this.props.onDestroy
+            isDone: this.props.isDone
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.destroyItem = this.destroyItem.bind(this);
+
     }
 
     handleChange(){
@@ -22,6 +23,10 @@ class ToDoItem extends Component {
         }else{
             this.setState({isDone: true});
         }
+    }
+
+    destroyItem(){
+        this.props.onDestroy(this.state.name);
     }
 
     render(){
@@ -34,7 +39,7 @@ class ToDoItem extends Component {
                         onChange={this.handleChange}
                     />
                     {this.state.name}
-                    <span onClick={this.state.onDestroy}/>
+                    <span onClick={this.destroyItem}/>
                 </label>
             </div>
         );
