@@ -17,15 +17,26 @@ $iconFont: FontAwesome;
   .todo-header {
     background: $primary-color;
     position: relative;
-    color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     height: 70px;
     vertical-align: middle;
     padding-left: 35px;
+    color: white;
 
-    h2 {
+    input[type='text'] {
       font-weight: 300;
-      display: inline-block;
+      border: none;
+      background: $primary-color;
+      font-size: 30px;
+      display: inline;
+      width: 250px;
+      color: white;
+      margin-top: 16px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
     }
 
     span:after {
@@ -59,6 +70,8 @@ $iconFont: FontAwesome;
   }
 
   .todo-list {
+    cursor: pointer;
+
     label {
       display: block;
       border-bottom: 1px solid $divider-color;

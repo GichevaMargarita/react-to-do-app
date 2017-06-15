@@ -3,6 +3,7 @@ import "../scss/App.css";
 import $ from "jquery";
 import ToDoItem from "./ToDoItem";
 import ToDoInput from "./ToDoInput";
+import ToDoHeader from "./ToDoHeader";
 
 let activeItems = [];
 let completedItems = [];
@@ -14,20 +15,11 @@ class ToDoModel extends Component {
             title: props.title,
             data: props.data
         };
-
-        this.addNewItem = this.addNewItem.bind(this);
     }
 
     showCompletedItems(e) {
-        $(e.target).toggleClass("showCompleted hideCompleted");
+        $('.actionForCompleted').toggleClass("showCompleted hideCompleted");
         $('.completed-items').slideToggle();
-    }
-
-    addNewItem(itemName){
-        let data = this.state.data;
-        data.push({name: itemName, isDone: false});
-
-        this.setState({data: data});
     }
 
     render() {
@@ -47,21 +39,20 @@ class ToDoModel extends Component {
 
         return (
             <div className="todo-item">
-                <div className="todo-header">
-                    <h2>{this.state.title}</h2><span/>
-                </div>
+
+                <ToDoHeader name="Shopping List"/>
 
                 <div className="todo-list">
                     <div className="active-items">
                         {activeItems}
                     </div>
 
-                    <ToDoInput addNewToDoItem={this.addNewItem}/>
+                    <ToDoInput/>
 
-                    <div className="todo-settings">
+                    <div className="todo-settings" onClick={this.showCompletedItems}>
                         <span>
-                            <span onClick={this.showCompletedItems}>({completedItems.length}) Completed Items </span>
-                            <span className="actionForCompleted showCompleted" onClick={this.showCompletedItems}/>
+                            <span>({completedItems.length}) Completed Items </span>
+                            <span className="actionForCompleted showCompleted"/>
                         </span>
                     </div>
 
