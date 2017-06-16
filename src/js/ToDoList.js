@@ -1,11 +1,8 @@
-/**
- * Created by magi1016 on 15.06.2017.
- */
+/**Created by magi1016 on 15.06.2017.*/
 import React, {Component} from "react";
 import "../scss/App.css";
 import ToDoItem from "./ToDoItem";
 import ToDoInput from "./ToDoInput";
-import $ from "jquery";
 
 
 class ToDoList extends Component {
@@ -14,17 +11,19 @@ class ToDoList extends Component {
         super(props);
         this.state = {
             todoItems: this.props.todoItems,
-            completedIsVisible : true
+            completedIsVisible: false
         };
 
         this.addNewToDoItem = this.addNewToDoItem.bind(this);
         this.deleteToDoItem = this.deleteToDoItem.bind(this);
         this.updateToDoItem = this.updateToDoItem.bind(this);
-        // this.clearCompletedToDoItems = this.clearCompletedToDoItems.bind(this);
+        this.showCompletedItems = this.showCompletedItems.bind(this);
     }
 
     showCompletedItems() {
-        this.setState({completedIsVisible: !this.state.completedIsVisible});
+        this.setState({
+            completedIsVisible: !this.state.completedIsVisible
+        });
     }
 
     addNewToDoItem(itemName) {
@@ -43,7 +42,7 @@ class ToDoList extends Component {
         event.preventDefault();
         let currentItems = this.state.todoItems;
         let index = -1;
-        $.each(currentItems, (itemIndex, item) => {
+        currentItems.map((item, itemIndex) => {
             if (item.name === itemName) {
                 index = itemIndex;
             }
@@ -57,7 +56,7 @@ class ToDoList extends Component {
 
     updateToDoItem(itemName, itemIsDone) {
         let currentItems = this.state.todoItems;
-        $.each(currentItems, (itemIndex, item) => {
+        currentItems.map((item, itemIndex) => {
             if (item.name === itemName) {
                 item.isDone = itemIsDone;
             }
@@ -104,7 +103,12 @@ class ToDoList extends Component {
             })
         }
 
+        const showHide = {
+            'display': this.state.completedIsVisible ? 'block' : 'none'
+        };
+
         return (
+
             <div className="todo-list">
                 <div className="active-items">
                     {activeItems}
@@ -112,15 +116,16 @@ class ToDoList extends Component {
 
                 <ToDoInput onComplete={this.addNewToDoItem}/>
 
-                <div className="todo-showCompleted" onClick={this.showCompletedItems.bind(this)}>
-                {/*<div className="todo-showCompleted" onClick={this.clearCompletedToDoItems}>*/}
-                        <span>
+                <div className="todo-showCompleted" onClick={this.showCompletedItems}>
+                    {/*<div className="todo-showCompleted" onClick={this.clearCompletedToDoItems}>*/}
+                    <span>
                             <span>({completedItems.length}) Completed Items </span>
                             <span className="actionForCompleted showCompleted"/>
                         </span>
                 </div>
-                <div className="completed-items">
-                    {this.state.completedIsVisible ? completedItems : null}
+
+                <div className="completed-items" style={showHide}>
+                    {completedItems}
                 </div>
             </div>
         );
