@@ -8,146 +8,187 @@ $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
 $iconFont: FontAwesome;
 
-.todo-item {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 350px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: white;
+.app-aggregator {
 
-  .todo-header {
-    background: $primary-color;
-    position: relative;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    height: 70px;
-    vertical-align: middle;
-    padding-left: 35px;
-    color: white;
+  .todo-items-list {
+    width: 85%;
+    margin: auto;
+    padding-right: 0;
+    text-align: center;
 
-    input[type='text'] {
-      font-weight: 300;
-      border: none;
-      background: $primary-color;
-      font-size: 30px;
-      display: inline;
-      width: 250px;
-      color: white;
-      margin-top: 16px;
+    .todo-item {
+      display: inline-table;
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 30%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background: white;
+      margin: 1%;
+      text-align: left;
 
-      &:focus {
-        border: none;
-        outline: none;
-      }
-    }
+      .todo-header {
+        background: $primary-color;
+        position: relative;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        height: 70px;
+        vertical-align: middle;
+        padding-left: 35px;
+        color: white;
 
-    span:after {
-      font-family: $iconFont;
-      content: "\f142";
-      float: right;
-      margin: 27px 18px;
-    }
-  }
+        input[type='text'] {
+          font-weight: 300;
+          border: none;
+          background: $primary-color;
+          font-size: 30px;
+          display: inline;
+          width: 250px;
+          color: white;
+          margin-top: 16px;
 
-  .new-todo-item {
-    padding: 16px 13px;
-    border-bottom: 1px solid $divider-color;
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
 
-    input[type='text'] {
-      border: none;
-      font-size: 16px;
-
-      &:focus {
-        border: none;
-        outline: none;
-      }
-    }
-
-    span:after {
-      font-family: $iconFont;
-      content: "\f067";
-      color: $secondary-text-color;
-      margin-right: 15px;
-    }
-  }
-
-  .todo-list {
-    cursor: pointer;
-
-    label {
-      display: block;
-      border-bottom: 1px solid $divider-color;
-      padding: 16px 0;
-    }
-
-    input[type="checkbox"] {
-      -webkit-appearance: none;
-      appearance: none;
-
-      &:focus {
-        outline: none;
+        span:after {
+          font-family: $iconFont;
+          content: "\f142";
+          float: right;
+          margin: 27px 18px;
+        }
       }
 
-      &:before {
-        font-family: $iconFont;
-        content: "\f096";
-        font-size: 15px;
-        margin: 0 10px;
+      .new-todo-item {
+        padding: 16px 13px;
+        border-bottom: 1px solid $divider-color;
+
+        input[type='text'] {
+          border: none;
+          font-size: 16px;
+
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
+
+        span:after {
+          font-family: $iconFont;
+          content: "\f067";
+          color: $secondary-text-color;
+          margin-right: 15px;
+        }
       }
 
-      &:checked:before {
-        font-family: $iconFont;
-        content: "\f046";
-        font-size: 15px;
+      .todo-list {
+        cursor: pointer;
+
+        label {
+          display: block;
+          border-bottom: 1px solid $divider-color;
+          padding: 16px 0;
+        }
+
+        input[type="checkbox"] {
+          -webkit-appearance: none;
+          appearance: none;
+
+          &:focus {
+            outline: none;
+          }
+
+          &:before {
+            font-family: $iconFont;
+            content: "\f096";
+            font-size: 15px;
+            margin: 0 10px;
+          }
+
+          &:checked:before {
+            font-family: $iconFont;
+            content: "\f046";
+            font-size: 15px;
+            color: $secondary-text-color;
+            margin: 0 10px;
+          }
+        }
+
+        .completed-items {
+          display: none;
+
+          label {
+            color: $secondary-text-color;
+            text-decoration: line-through;
+          }
+        }
+
+        div > label:hover {
+          span:after {
+            font-family: $iconFont;
+            content: "\f00d";
+            float: right;
+            margin-right: 15px;
+            margin-top: 3px;
+            color: $secondary-text-color;
+            display: inline-block;
+
+            &:hover {
+              color: $primary-text-color;
+            }
+          }
+        }
+      }
+
+      .todo-showCompleted {
+        border-bottom: 1px solid $divider-color;
         color: $secondary-text-color;
-        margin: 0 10px;
-      }
-    }
+        padding: 8px 15px 8px 13px;
+        font-size: 13px;
 
-    .completed-items {
-      display: none;
+        span {
+          span:hover {
+            color: $primary-color-dark;
+          }
+        }
 
-      label {
-        color: $secondary-text-color;
-        text-decoration: line-through;
-      }
-    }
+        .actionForCompleted {
+          font-family: $iconFont;
+          float: right;
+        }
 
-    div > label:hover {
-      span:after {
-        font-family: $iconFont;
-        content: "\f00d";
-        float: right;
-        margin-right: 15px;
-        margin-top: 3px;
-        color: $secondary-text-color;
-        display: inline-block;
+        .showCompleted:after {
+          content: "\f078";
+        }
 
-
-        &:hover {
-          color: $primary-text-color;
+        .hideCompleted:after {
+          content: "\f077";
         }
       }
     }
   }
 
-  .todo-settings {
-    border-bottom: 1px solid $divider-color;
-    color: $secondary-text-color;
-    padding: 8px 15px 8px 13px;
-    font-size: 13px;
+  .todoBtn {
+    width: 56px;
+    height: 56px;
+    background: $accent-color;
+    border-radius: 28px;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    .actionForCompleted{
-      font-family: $iconFont;
-      float: right;
-    }
+    span {
+      position: absolute;
+      margin-left: 18px;
+      margin-top: 15px;
 
-    .showCompleted:after {
-      content: "\f078";
-    }
-
-    .hideCompleted:after {
-      content: "\f077";
+      &:after {
+        font-family: $iconFont;
+        content: "\f067";
+        color: $primary-color-text;
+      }
     }
   }
+
 }
+
 
 /*https://codepen.io/Sambego/pen/zDLxe/       TODO SCSS*/

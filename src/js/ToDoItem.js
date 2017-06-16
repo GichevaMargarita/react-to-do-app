@@ -21,8 +21,8 @@ class ToDoItem extends Component {
         this.setState({isDone: !this.state.isDone}, this.props.onUpdate(this.state.name, !this.state.isDone));
     }
 
-    destroyItem() {
-        this.props.onDestroy(this.state.name);
+    destroyItem(event) {
+        this.props.onDestroy(this.state.name, event);
     }
 
 

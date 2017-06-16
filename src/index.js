@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToDoModel from './js/ToDoModel';
+import ToDoAppAggregator from './js/ToDoAppAggregator';
 
-var data=[{
-    name: "Name 1",
-    isDone: false
-},{
-    name: "Name 2",
-    isDone: true
-}];
+// var data=[{
+//     name: "Name 1",
+//     isDone: false
+// },{
+//     name: "Name 2",
+//     isDone: true
+// }];
+// ReactDOM.render(<ToDoContainer data={data}/>, document.getElementById('root'));
 
-ReactDOM.render(<ToDoModel data={data}/>, document.getElementById('root'));
+ReactDOM.render(<ToDoAppAggregator />, document.getElementById('root'));
+
+

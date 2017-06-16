@@ -19,11 +19,12 @@ class ToDoList extends Component {
         this.addNewToDoItem = this.addNewToDoItem.bind(this);
         this.deleteToDoItem = this.deleteToDoItem.bind(this);
         this.updateToDoItem = this.updateToDoItem.bind(this);
+        // this.clearCompletedToDoItems = this.clearCompletedToDoItems.bind(this);
     }
 
     showCompletedItems(e) {
-        $('.actionForCompleted').toggleClass("showCompleted hideCompleted");
-        $('.completed-items').slideToggle();
+        $(this).closest('.todo-list').find('.actionForCompleted').toggleClass("showCompleted hideCompleted");
+        $(this).closest('.todo-list').find('.completed-items').slideToggle();
     }
 
     addNewToDoItem(itemName) {
@@ -38,7 +39,8 @@ class ToDoList extends Component {
         });
     }
 
-    deleteToDoItem(itemName) {
+    deleteToDoItem(itemName, event) {
+        event.preventDefault();
         let currentItems = this.state.todoItems;
         let index = -1;
         $.each(currentItems, (itemIndex, item) => {
@@ -65,6 +67,19 @@ class ToDoList extends Component {
             todoItems: currentItems
         });
     }
+
+    // clearCompletedToDoItems(){
+    //     let currentItems = this.state.todoItems;
+    //     $.each(currentItems, (itemIndex, item) => {
+    //         if (item.isDone) {
+    //             this.deleteToDoItem(item.name);
+    //         }
+    //     });
+    //
+    //     this.setState({
+    //         todoItems: currentItems
+    //     });
+    // }
 
     render() {
         let todoItems = this.state.todoItems;
@@ -97,7 +112,8 @@ class ToDoList extends Component {
 
                 <ToDoInput onComplete={this.addNewToDoItem}/>
 
-                <div className="todo-settings" onClick={this.showCompletedItems}>
+                <div className="todo-showCompleted" onClick={this.showCompletedItems.bind(this)}>
+                {/*<div className="todo-showCompleted" onClick={this.clearCompletedToDoItems}>*/}
                         <span>
                             <span>({completedItems.length}) Completed Items </span>
                             <span className="actionForCompleted showCompleted"/>
