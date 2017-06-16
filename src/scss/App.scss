@@ -57,30 +57,55 @@ $iconFont: FontAwesome;
         }
       }
 
-      .new-todo-item {
-        padding: 16px 13px;
-        border-bottom: 1px solid $divider-color;
+      .todo-list {
+        cursor: pointer;
 
-        input[type='text'] {
-          border: none;
-          font-size: 16px;
+        .new-todo-item {
+          padding: 16px 13px;
+          border-bottom: 1px solid $divider-color;
 
-          &:focus {
+          input[type='text'] {
             border: none;
-            outline: none;
+            font-size: 16px;
+
+            &:focus {
+              border: none;
+              outline: none;
+            }
+          }
+
+          span:after {
+            font-family: $iconFont;
+            content: "\f067";
+            color: $secondary-text-color;
+            margin-right: 15px;
           }
         }
 
-        span:after {
-          font-family: $iconFont;
-          content: "\f067";
+        .todo-showCompleted {
+          border-bottom: 1px solid $divider-color;
           color: $secondary-text-color;
-          margin-right: 15px;
-        }
-      }
+          padding: 8px 15px 8px 13px;
+          font-size: 13px;
 
-      .todo-list {
-        cursor: pointer;
+          span {
+            span:hover {
+              color: $primary-color-dark;
+            }
+          }
+
+          .showCompleted:after {
+            font-family: $iconFont;
+            float: right;
+            content: "\f078";
+          }
+
+          .hideCompleted:after {
+            font-family: $iconFont;
+            float: right;
+            content: "\f077";
+          }
+        }
 
         label {
           display: block;
@@ -138,31 +163,6 @@ $iconFont: FontAwesome;
               color: $primary-text-color;
             }
           }
-        }
-      }
-
-      .todo-showCompleted {
-        border-bottom: 1px solid $divider-color;
-        color: $secondary-text-color;
-        padding: 8px 15px 8px 13px;
-        font-size: 13px;
-
-        span {
-          span:hover {
-            color: $primary-color-dark;
-          }
-        }
-
-        .showCompleted:after {
-          font-family: $iconFont;
-          float: right;
-          content: "\f078";
-        }
-
-        .hideCompleted:after {
-          font-family: $iconFont;
-          float: right;
-          content: "\f077";
         }
       }
     }
