@@ -107,6 +107,8 @@ class ToDoList extends Component {
             'display': this.state.completedIsVisible ? 'block' : 'none'
         };
 
+        let className = this.state.completedIsVisible ? 'showCompleted' : 'hideCompleted';
+
         return (
 
             <div className="todo-list">
@@ -120,7 +122,7 @@ class ToDoList extends Component {
                     {/*<div className="todo-showCompleted" onClick={this.clearCompletedToDoItems}>*/}
                     <span>
                             <span>({completedItems.length}) Completed Items </span>
-                            <span className="actionForCompleted showCompleted"/>
+                            <span className={className}/>
                         </span>
                 </div>
 

@@ -154,16 +154,15 @@ $iconFont: FontAwesome;
           }
         }
 
-        .actionForCompleted {
+        .showCompleted:after {
           font-family: $iconFont;
           float: right;
-        }
-
-        .showCompleted:after {
           content: "\f078";
         }
 
         .hideCompleted:after {
+          font-family: $iconFont;
+          float: right;
           content: "\f077";
         }
       }
