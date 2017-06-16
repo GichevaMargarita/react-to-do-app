@@ -17,20 +17,16 @@ class ToDoItem extends Component {
 
     }
 
-    handleChange(){
-        if(this.state.isDone){
-            this.setState({isDone: false});
-        }else{
-            this.setState({isDone: true});
-        }
-        this.props.onUpdate(this.state.name, this.state.isDone);
+    handleChange() {
+        this.setState({isDone: !this.state.isDone}, this.props.onUpdate(this.state.name, !this.state.isDone));
     }
 
-    destroyItem(){
+    destroyItem() {
         this.props.onDestroy(this.state.name);
     }
 
-    render(){
+
+    render() {
         return (
             <div>
                 <label>
@@ -40,9 +36,9 @@ class ToDoItem extends Component {
                         onChange={this.handleChange}
                     />
                     {this.state.name}
-                    <span/>
-                    {/*<span onClick={this.destroyItem}/>*/}
+                    <span onClick={this.destroyItem}/>
                 </label>
+
             </div>
         );
     };

@@ -80,16 +80,16 @@ class ToDoList extends Component {
                     key={index}
                     onDestroy={this.deleteToDoItem}
                     onUpdate={this.updateToDoItem}/>;
-                        if (item.isDone) {
-                        completedItems.push(todoItem);
-                    }
-                        else {
-                        activeItems.push(todoItem);
-                    }
-                    })
+                if (item.isDone) {
+                    completedItems.push(todoItem);
                 }
+                else {
+                    activeItems.push(todoItem);
+                }
+            })
+        }
 
-                return (
+        return (
             <div className="todo-list">
                 <div className="active-items">
                     {activeItems}
@@ -108,9 +108,9 @@ class ToDoList extends Component {
                     {completedItems}
                 </div>
             </div>
-                );
-                }
+        );
+    }
 
-                }
+}
 
-                export default ToDoList;
+export default ToDoList;

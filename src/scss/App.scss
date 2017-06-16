@@ -119,6 +119,8 @@ $iconFont: FontAwesome;
         margin-right: 15px;
         margin-top: 3px;
         color: $secondary-text-color;
+        display: inline-block;
+
 
         &:hover {
           color: $primary-text-color;
