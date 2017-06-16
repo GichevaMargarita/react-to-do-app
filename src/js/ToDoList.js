@@ -13,7 +13,8 @@ class ToDoList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todoItems: this.props.todoItems
+            todoItems: this.props.todoItems,
+            completedIsVisible : true
         };
 
         this.addNewToDoItem = this.addNewToDoItem.bind(this);
@@ -22,9 +23,8 @@ class ToDoList extends Component {
         // this.clearCompletedToDoItems = this.clearCompletedToDoItems.bind(this);
     }
 
-    showCompletedItems(e) {
-        $(this).closest('.todo-list').find('.actionForCompleted').toggleClass("showCompleted hideCompleted");
-        $(this).closest('.todo-list').find('.completed-items').slideToggle();
+    showCompletedItems() {
+        this.setState({completedIsVisible: !this.state.completedIsVisible});
     }
 
     addNewToDoItem(itemName) {
@@ -119,9 +119,8 @@ class ToDoList extends Component {
                             <span className="actionForCompleted showCompleted"/>
                         </span>
                 </div>
-
                 <div className="completed-items">
-                    {completedItems}
+                    {this.state.completedIsVisible ? completedItems : null}
                 </div>
             </div>
         );
