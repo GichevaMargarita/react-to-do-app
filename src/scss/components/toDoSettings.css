@@ -5,11 +5,14 @@
   margin-right: 2%;
   position: absolute;
   right: 0; }
-  .todo-settings div {
-    border-bottom: 1px solid darkgray;
-    background: white;
-    padding: 6px 15px; }
-  .todo-settings .show {
-    display: block; }
-  .todo-settings .hide {
-    display: none; }
+
+.todo-settings div {
+  border-bottom: 1px solid darkgray;
+  background: white;
+  padding: 6px 15px; }
+
+.todo-settings .show {
+  display: block; }
+
+.todo-settings .hide {
+  display: none; }
