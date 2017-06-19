@@ -2,13 +2,6 @@
 
 .todo-list {
   cursor: pointer;
-  .hide {
-    display: none !important;
-  }
-
-  .show {
-    display: block !important;
-  }
 
   .todo-showCompleted {
     border-bottom: 1px solid $divider-color;

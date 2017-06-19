@@ -1,0 +1,14 @@
+.todo-settings{
+  color: gray;
+  width: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-right: 2%;
+  position: absolute;
+  right: 0;
+
+  div{
+    border-bottom: 1px solid darkgray;
+    background: white;
+    padding: 6px 15px;
+  }
+}
