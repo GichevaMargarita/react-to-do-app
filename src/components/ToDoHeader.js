@@ -1,8 +1,4 @@
-/**
- * Created by magi1016 on 15.06.2017.
- */
-import React, {Component} from "react";
-import "../scss/App.css";
+import React, { Component } from "react";
 
 class ToDoHeader extends Component {
     constructor(props) {
@@ -10,24 +6,25 @@ class ToDoHeader extends Component {
         this.state = {
             name: this.props.name ? this.props.name : ''
         };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event){
-        this.setState({name: event.target.value});
+    handleChange(event) {
+        const name = event.target.value;
+        this.setState({ name });
     }
 
     render() {
+        const { name } = this.state;
+
         return (
             <div className="todo-header">
                 <input
                     type="text"
                     placeholder="Note title"
-                    value={this.state.name}
-                    onChange={this.handleChange}
+                    value={name}
+                    onChange={this.handleChange.bind(this)}
                 />
-                <span/>
+                <span />
             </div>
         );
     };

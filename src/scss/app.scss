@@ -8,6 +8,14 @@ $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
 $iconFont: FontAwesome;
 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
 .app-aggregator {
 
   .todo-items-list {
@@ -115,9 +123,9 @@ $iconFont: FontAwesome;
 
         input[type="checkbox"] {
           -webkit-appearance: none;
-          -moz-appearance:none;
+          -moz-appearance: none;
           appearance: none;
-          border:none;
+          border: none;
           outline: none;
 
           &:focus {
@@ -189,8 +197,6 @@ $iconFont: FontAwesome;
       }
     }
   }
-
 }
-
 
 /*https://codepen.io/Sambego/pen/zDLxe/       TODO SCSS*/
