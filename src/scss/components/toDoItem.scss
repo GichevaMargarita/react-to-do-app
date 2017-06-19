@@ -1,0 +1,50 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.todo-issue {
+  label {
+    display: block;
+    border-bottom: 1px solid $divider-color;
+    padding: 16px 0;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:before {
+      @include icon('\f096', $secondary-text-color);
+      font-size: 15px;
+      margin: 0 10px;
+    }
+
+    &:checked:before {
+      @include icon('\f046', $secondary-text-color);
+      font-size: 15px;
+      margin: 0 10px;
+    }
+  }
+
+  label:hover {
+    span:after {
+      font-family: $iconFont;
+      content: "\f00d";
+      float: right;
+      margin-right: 15px;
+      margin-top: 3px;
+      color: $secondary-text-color;
+      display: inline-block;
+
+      &:hover {
+        color: $primary-text-color;
+      }
+    }
+  }
+}

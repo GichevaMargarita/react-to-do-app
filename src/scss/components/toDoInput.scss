@@ -1,0 +1,22 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.todo-item-input {
+  padding: 16px 13px;
+  border-bottom: 1px solid $divider-color;
+
+  span:after {
+    @include icon('\f067', $secondary-text-color);
+    margin-right: 15px;
+  }
+
+  input[type='text'] {
+    border: none;
+    font-size: 16px;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}

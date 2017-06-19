@@ -1,0 +1,8 @@
+.todo-container {
+  display: inline-table;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: white;
+  margin: 1%;
+  text-align: left; }

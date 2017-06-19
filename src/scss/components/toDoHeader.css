@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.todo-header {
+  background: #03A9F4;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 70px;
+  vertical-align: middle;
+  padding-left: 35px;
+  color: #FFFFFF; }
+  .todo-header input[type='text'] {
+    font-weight: 300;
+    border: none;
+    background: #03A9F4;
+    font-size: 30px;
+    display: inline;
+    width: 80%;
+    color: #FFFFFF;
+    margin-top: 16px; }
+    .todo-header input[type='text']:focus {
+      border: none;
+      outline: none; }
+  .todo-header span:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #FFFFFF;
+    float: right;
+    margin: 27px 18px; }

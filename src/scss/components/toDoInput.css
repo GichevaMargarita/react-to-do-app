@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.todo-item-input {
+  padding: 16px 13px;
+  border-bottom: 1px solid #BDBDBD; }
+  .todo-item-input span:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #757575;
+    margin-right: 15px; }
+  .todo-item-input input[type='text'] {
+    border: none;
+    font-size: 16px; }
+    .todo-item-input input[type='text']:focus {
+      border: none;
+      outline: none; }

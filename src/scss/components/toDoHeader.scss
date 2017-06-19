@@ -1,0 +1,35 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.todo-header {
+  background: $primary-color;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 70px;
+  vertical-align: middle;
+  padding-left: 35px;
+  color: $primary-color-text;
+
+  input[type='text'] {
+    font-weight: 300;
+    border: none;
+    background: $primary-color;
+    font-size: 30px;
+    display: inline;
+    width: 80%;
+    color: $primary-color-text;
+    margin-top: 16px;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  span:after {
+    @include icon('\f142', $primary-color-text);
+    float: right;
+    margin: 27px 18px;
+  }
+
+}
