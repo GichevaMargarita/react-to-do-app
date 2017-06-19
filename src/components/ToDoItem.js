@@ -11,7 +11,7 @@ class ToDoItem extends Component {
         const { name, isDone, deleteItem } = this.props;
 
         return (
-            <div>
+            <div className="todo-issue">
                 <label>
                     <input
                         type="checkbox"

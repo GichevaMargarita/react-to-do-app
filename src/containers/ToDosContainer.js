@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import "../scss/app.css";
 import ToDoContainer from "./ToDoContainer";
 import BtnNewToDo from "../components/RoundButton";
 

@@ -3,7 +3,7 @@ import ToDoHeader from "../components/ToDoHeader";
 import ToDoListContainer from "./ToDoListContainer";
 
 const ToDoContainer = props => (
-    <div className="todo-item">
+    <div className="todo-container">
         <ToDoHeader name={props.name ? props.name : []} />
         <ToDoListContainer data={props.data ? props.data : []} />
     </div>

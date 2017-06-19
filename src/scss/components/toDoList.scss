@@ -1,0 +1,47 @@
+@import "../helpers/variables";
+
+.todo-list {
+  cursor: pointer;
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .todo-showCompleted {
+    border-bottom: 1px solid $divider-color;
+    color: $secondary-text-color;
+    padding: 8px 15px 8px 13px;
+    font-size: 13px;
+
+    span {
+      span:hover {
+        color: $primary-color-dark;
+      }
+    }
+
+    .showCompleted:after {
+      font-family: $iconFont;
+      float: right;
+      content: "\f078";
+    }
+
+    .hideCompleted:after {
+      font-family: $iconFont;
+      float: right;
+      content: "\f077";
+    }
+  }
+
+  .completed-items {
+    display: none;
+
+    label {
+      color: $secondary-text-color;
+      text-decoration: line-through;
+    }
+  }
+
+}

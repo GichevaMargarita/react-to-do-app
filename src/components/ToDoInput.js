@@ -34,7 +34,7 @@ class ToDoInput extends Component {
     render() {
         const { value } = this.state;
         return (
-            <div className="new-todo-item">
+            <div className="todo-item-input">
                 <span />
                 <input
                     type="text"
