@@ -1,15 +1,15 @@
 import React, {Component} from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 class ToDoSettings extends Component {
     render() {
-        let settingsItems = [];
+        const settingsItems = [];
 
         this.props.data.map((item, index) => (
-         settingsItems.push(<div
-             key={index}
-             onClick={item.clickFunction}>
-             <span className={item.settingName.split(' ').join('')}/>{item.settingName}</div>)
+            settingsItems.push(<div
+                key={index}
+                onClick={item.clickFunction}>
+                <span className={item.settingName.split(' ').join('')}/>{item.settingName}</div>)
         ));
 
         return (

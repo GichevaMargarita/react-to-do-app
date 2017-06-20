@@ -33,6 +33,7 @@ class ToDoListContainer extends Component {
     render() {
         const {isCompletedVisible} = this.state;
         const {items} = this.props;
+
         let activeItems = items.filter(item => !item.isDone);
         let completedItems = items.filter(item => item.isDone);
 

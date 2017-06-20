@@ -2,7 +2,8 @@
 .todo-issue label {
   display: block;
   border-bottom: 1px solid #BDBDBD;
-  padding: 16px 0; }
+  padding: 16px 0;
+  cursor: pointer; }
 
 .todo-issue input[type="checkbox"] {
   -webkit-appearance: none;
@@ -10,20 +11,25 @@
   appearance: none;
   border: none;
   outline: none; }
-  .todo-issue input[type="checkbox"]:focus {
-    outline: none; }
-  .todo-issue input[type="checkbox"]:before {
-    font-family: FontAwesome;
-    content: "";
-    color: #757575;
-    font-size: 15px;
-    margin: 0 10px; }
-  .todo-issue input[type="checkbox"]:checked:before {
-    font-family: FontAwesome;
-    content: "";
-    color: #757575;
-    font-size: 15px;
-    margin: 0 10px; }
+
+.todo-issue input[type="checkbox"]:focus {
+  outline: none; }
+
+.todo-issue input[type="checkbox"]:before {
+  font-family: FontAwesome;
+  content: "";
+  color: #757575;
+  font-size: 15px;
+  margin: 0 10px;
+  cursor: pointer; }
+
+.todo-issue input[type="checkbox"]:checked:before {
+  font-family: FontAwesome;
+  content: "";
+  color: #757575;
+  font-size: 15px;
+  margin: 0 10px;
+  cursor: pointer; }
 
 .todo-issue label:hover span:after {
   font-family: FontAwesome;
@@ -32,6 +38,8 @@
   margin-right: 15px;
   margin-top: 3px;
   color: #757575;
-  display: inline-block; }
-  .todo-issue label:hover span:after:hover {
-    color: #212121; }
+  display: inline-block;
+  cursor: pointer; }
+
+.todo-issue label:hover span:after:hover {
+  color: #212121; }

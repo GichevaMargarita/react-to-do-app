@@ -4,6 +4,7 @@
 .todo-item-input {
   padding: 16px 13px;
   border-bottom: 1px solid $divider-color;
+  cursor: default;
 
   span:after {
     @include icon('\f067', $secondary-text-color);

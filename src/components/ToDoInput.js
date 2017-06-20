@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 const ESCAPE_KEY = 27;
 const ENTER_KEY = 13;
@@ -12,27 +12,27 @@ class ToDoInput extends Component {
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.setState({value: event.target.value});
     }
 
     addNewToDoItem() {
-        const {value} =this.state;
+        const {value} = this.state;
         if (value) {
             this.props.addNewItem(value);
         }
-        this.setState({ value: '' });
+        this.setState({value: ''});
     }
 
     handleKeyDown(event) {
         if (event.which === ESCAPE_KEY) {
-            this.setState({ value: '' });
+            this.setState({value: ''});
         } else if (event.which === ENTER_KEY) {
             this.addNewToDoItem();
         }
     }
 
     render() {
-        const { value } = this.state;
+        const {value} = this.state;
         return (
             <div className="todo-item-input">
                 <span />

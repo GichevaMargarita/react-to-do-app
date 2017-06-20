@@ -27,4 +27,5 @@
   content: "";
   color: #FFFFFF;
   float: right;
-  margin: 27px 18px; }
+  margin: 27px 18px;
+  cursor: pointer; }

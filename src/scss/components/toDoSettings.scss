@@ -1,29 +1,30 @@
 @import "../helpers/variables";
 @import "../helpers/mixins";
 
-.todo-settings{
+.todo-settings {
   color: $secondary-text-color;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   margin-right: 2%;
   position: absolute;
   right: 0;
+  cursor: pointer;
 
-  div{
+  div {
     border-bottom: 1px solid $secondary-text-color;
     background: $primary-color-text;
     padding: 10px;
   }
 
-  div:last-child{
+  div:last-child {
     border: none;
   }
 
-  .MarkAllAsCompleted:after{
+  .MarkAllAsCompleted:after {
     @include icon('\f00c', $secondary-text-color);
     margin-right: 5px;
   }
 
-  .DeleteCompleted:after{
+  .DeleteCompleted:after {
     @include icon('\f1f8', $secondary-text-color);
     margin-right: 5px;
   }

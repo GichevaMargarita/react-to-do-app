@@ -26,7 +26,7 @@ class ToDoContainer extends Component {
             event.preventDefault();
         }
 
-        let items= this.state.items.filter(item => item.name !== name);
+        let items = this.state.items.filter(item => item.name !== name);
 
         this.setState({items});
     }
@@ -61,10 +61,9 @@ class ToDoContainer extends Component {
                             clearCompletedItems={this.clearCompletedItems.bind(this)}
                             markAllItemsAsDone={this.markAllItemsAsDone.bind(this)}/>
                 <ToDoListContainer items={this.state.items}
-                           addNewItem={this.addNewItem.bind(this)}
-                           deleteItem={this.deleteItem.bind(this)}
-                           updateItem={this.updateItem.bind(this)}
-                />
+                                   addNewItem={this.addNewItem.bind(this)}
+                                   deleteItem={this.deleteItem.bind(this)}
+                                   updateItem={this.updateItem.bind(this)}/>
             </div>
         );
     }

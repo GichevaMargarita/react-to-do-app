@@ -1,6 +1,6 @@
 @import "variables";
 
-@mixin icon($content, $color){
+@mixin icon($content, $color) {
   font-family: $iconFont;
   content: $content;
   color: $color;

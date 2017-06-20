@@ -21,12 +21,8 @@ class ToDoHeader extends Component {
         });
     }
 
-    clickFunction(){
-
-    }
-
     render() {
-        let data = [{
+        const data = [{
             settingName: "Mark All As Completed",
             clickFunction: this.props.markAllItemsAsDone
         }, {
@@ -42,8 +38,7 @@ class ToDoHeader extends Component {
                     type="text"
                     placeholder="Note title"
                     value={name}
-                    onChange={this.handleChange.bind(this)}
-                />
+                    onChange={this.handleChange.bind(this)}/>
                 <ToDoSettings data={data} isVisible={isSettingsVisible}/>
                 <span onClick={this.triggerSettings.bind(this)} className="todo-settings-icon"/>
             </div>
