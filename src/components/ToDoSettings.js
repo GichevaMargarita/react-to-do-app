@@ -9,7 +9,7 @@ class ToDoSettings extends Component {
          settingsItems.push(<div
              key={index}
              onClick={item.clickFunction}>
-             {item.settingName}</div>)
+             <span className={item.settingName.split(' ').join('')}/>{item.settingName}</div>)
         ));
 
         return (

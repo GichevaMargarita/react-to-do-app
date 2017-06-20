@@ -45,7 +45,7 @@ class ToDoHeader extends Component {
                     onChange={this.handleChange.bind(this)}
                 />
                 <ToDoSettings data={data} isVisible={isSettingsVisible}/>
-                <span onClick={this.triggerSettings.bind(this)}/>
+                <span onClick={this.triggerSettings.bind(this)} className="todo-settings-icon"/>
             </div>
         );
     }

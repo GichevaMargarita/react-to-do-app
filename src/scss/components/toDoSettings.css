@@ -1,11 +1,23 @@
+@charset "UTF-8";
 .todo-settings {
-  color: gray;
-  width: 50%;
+  color: #757575;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   margin-right: 2%;
   position: absolute;
   right: 0; }
   .todo-settings div {
-    border-bottom: 1px solid darkgray;
-    background: white;
-    padding: 6px 15px; }
+    border-bottom: 1px solid #757575;
+    background: #FFFFFF;
+    padding: 10px; }
+  .todo-settings div:last-child {
+    border: none; }
+  .todo-settings .MarkAllAsCompleted:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #757575;
+    margin-right: 5px; }
+  .todo-settings .DeleteCompleted:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #757575;
+    margin-right: 5px; }
