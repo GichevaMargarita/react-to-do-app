@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import ToDoHeader from "../components/ToDoHeader";
-import ToDoListContainer from "./ToDoListContainer";
+import ToDoContentContainer from "./ToDoContentContainer";
 
 class ToDoContainer extends Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class ToDoContainer extends Component {
                 <ToDoHeader name={this.props.name ? this.props.name : []}
                             clearCompletedItems={this.clearCompletedItems.bind(this)}
                             markAllItemsAsDone={this.markAllItemsAsDone.bind(this)}/>
-                <ToDoListContainer items={this.state.items}
+                <ToDoContentContainer items={this.state.items}
                                    addNewItem={this.addNewItem.bind(this)}
                                    deleteItem={this.deleteItem.bind(this)}
                                    updateItem={this.updateItem.bind(this)}/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToDosContainer from './containers/ToDosContainer';
+import ToDoAppContainer from './containers/ToDoAppContainer';
 import "./scss/main.css";
 
-ReactDOM.render(<ToDosContainer />, document.getElementById('root'));
+ReactDOM.render(<ToDoAppContainer />, document.getElementById('root'));

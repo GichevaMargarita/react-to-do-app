@@ -4,7 +4,7 @@ import classNames from "classnames";
 import ToDoItem from "../components/ToDoItem";
 import ToDoInput from "../components/ToDoInput";
 
-class ToDoListContainer extends Component {
+class ToDoContentContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -66,4 +66,4 @@ class ToDoListContainer extends Component {
     }
 }
 
-export default ToDoListContainer;
+export default ToDoContentContainer;

@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import ToDoContainer from "./ToDoContainer";
 import RoundButton from "../components/RoundButton";
 
-class ToDosContainer extends Component {
+class ToDoAppContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,4 +31,4 @@ class ToDosContainer extends Component {
     }
 }
 
-export default ToDosContainer;
+export default ToDoAppContainer;

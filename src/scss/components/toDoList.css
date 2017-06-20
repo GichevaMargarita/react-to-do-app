@@ -1,35 +1,22 @@
 .todo-list {
-    cursor: pointer;
-}
-
-.todo-list .todo-showCompleted {
+  cursor: pointer; }
+  .todo-list .todo-showCompleted {
     border-bottom: 1px solid #BDBDBD;
     color: #757575;
     padding: 8px 15px 8px 13px;
-    font-size: 13px;
-}
-
-.todo-list .todo-showCompleted span span:hover {
-    color: #0288D1;
-}
-
-.todo-list .todo-showCompleted .showCompleted:after {
-    font-family: FontAwesome;
-    float: right;
-    content: "\f078";
-}
-
-.todo-list .todo-showCompleted .hideCompleted:after {
-    font-family: FontAwesome;
-    float: right;
-    content: "\f077";
-}
-
-.todo-list .completed-items {
-    display: none;
-}
-
-.todo-list .completed-items label {
-    color: #757575;
-    text-decoration: line-through;
-}
+    font-size: 13px; }
+    .todo-list .todo-showCompleted span span:hover {
+      color: #0288D1; }
+    .todo-list .todo-showCompleted .showCompleted:after {
+      font-family: FontAwesome;
+      float: right;
+      content: "\f078"; }
+    .todo-list .todo-showCompleted .hideCompleted:after {
+      font-family: FontAwesome;
+      float: right;
+      content: "\f077"; }
+  .todo-list .completed-items {
+    display: none; }
+    .todo-list .completed-items label {
+      color: #757575;
+      text-decoration: line-through; }
