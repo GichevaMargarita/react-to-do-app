@@ -27,11 +27,11 @@ class ToDoHeader extends Component {
 
     render() {
         let data = [{
-            settingName: "Name 1",
-            clickFunction: this.clickFunction()
+            settingName: "Mark All As Completed",
+            clickFunction: this.props.markAllItemsAsDone
         }, {
-            settingName: "Name 2",
-            clickFunction: this.clickFunction()
+            settingName: "Delete Completed",
+            clickFunction: this.props.clearCompletedItems
         }];
 
         const {name, isSettingsVisible} = this.state;

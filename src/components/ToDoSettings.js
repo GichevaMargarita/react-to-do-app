@@ -6,7 +6,10 @@ class ToDoSettings extends Component {
         let settingsItems = [];
 
         this.props.data.map((item, index) => (
-         settingsItems.push(<div key={index} onClick={item.clickFunction}>{item.settingName}</div>)
+         settingsItems.push(<div
+             key={index}
+             onClick={item.clickFunction}>
+             {item.settingName}</div>)
         ));
 
         return (
