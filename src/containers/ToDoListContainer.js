@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import classNames from 'classnames';
+import React, {Component} from "react";
+import classNames from "classnames";
 
 import ToDoItem from "../components/ToDoItem";
 import ToDoInput from "../components/ToDoInput";
@@ -20,14 +20,14 @@ class ToDoListContainer extends Component {
     }
 
     addNewItem(name) {
-        const { items } = this.state;
+        const {items} = this.state;
 
         items.push({
             name,
             isDone: false
         });
 
-        this.setState({ items });
+        this.setState({items});
     }
 
     deleteItem(name, event) {
@@ -37,7 +37,7 @@ class ToDoListContainer extends Component {
 
         const items = this.state.items.filter(item => item.name !== name);
 
-        this.setState({ items });
+        this.setState({items});
     }
 
     updateItem(name, isDone) {
@@ -49,7 +49,7 @@ class ToDoListContainer extends Component {
             }
         });
 
-        this.setState({ items });
+        this.setState({items});
     }
 
     createToDoItemsFromList(list) {
@@ -64,21 +64,19 @@ class ToDoListContainer extends Component {
         ));
     }
 
-    // clearCompletedToDoItems(){
-    //     let currentItems = this.state.todoItems;
-    //     $.each(currentItems, (itemIndex, item) => {
-    //         if (item.isDone) {
-    //             this.deleteToDoItem(item.name);
-    //         }
-    //     });
-    //
-    //     this.setState({
-    //         todoItems: currentItems
-    //     });
+    // clearCompletedItems() {
+    //     const items = this.state.items.filter(item => !item.isDone);
+    //     this.setState({items});
+    // }
+
+    // markAllItemsAsDone(){
+    //     const {items} =  this.state;
+    //     items.forEach(item => (item.isDone = true));
+    //     this.setState({items});
     // }
 
     render() {
-        const { items, isCompletedVisible } = this.state;
+        const {items, isCompletedVisible} = this.state;
         let activeItems = items.filter(item => !item.isDone);
         let completedItems = items.filter(item => item.isDone);
 
@@ -88,7 +86,7 @@ class ToDoListContainer extends Component {
                     {this.createToDoItemsFromList(activeItems)}
                 </div>
 
-                <ToDoInput addNewItem={this.addNewItem.bind(this)} />
+                <ToDoInput addNewItem={this.addNewItem.bind(this)}/>
 
                 <div className="todo-showCompleted" onClick={this.toggleCompletedShown.bind(this)}>
                     <span>
@@ -96,7 +94,7 @@ class ToDoListContainer extends Component {
                         <span className={classNames({
                             showCompleted: isCompletedVisible,
                             hideCompleted: !isCompletedVisible,
-                        })} />
+                        })}/>
                     </span>
                 </div>
 
