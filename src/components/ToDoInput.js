@@ -11,25 +11,25 @@ class ToDoInput extends Component {
         };
     }
 
-    handleChange(event) {
+    handleChange = event => {
         this.setState({value: event.target.value});
-    }
+    };
 
-    addNewToDoItem() {
+    addNewToDoItem = () => {
         const {value} = this.state;
         if (value) {
             this.props.addNewItem(value);
         }
         this.setState({value: ''});
-    }
+    };
 
-    handleKeyDown(event) {
+    handleKeyDown = event => {
         if (event.which === ESCAPE_KEY) {
             this.setState({value: ''});
         } else if (event.which === ENTER_KEY) {
             this.addNewToDoItem();
         }
-    }
+    };
 
     render() {
         const {value} = this.state;
@@ -39,10 +39,10 @@ class ToDoInput extends Component {
                 <input
                     type="text"
                     placeholder="What needs to be done?"
-                    onChange={this.handleChange.bind(this)}
+                    onChange={this.handleChange}
                     value={value}
-                    onBlur={this.addNewToDoItem.bind(this)}
-                    onKeyDown={this.handleKeyDown.bind(this)}
+                    onBlur={this.addNewToDoItem}
+                    onKeyDown={this.handleKeyDown}
                 />
             </div>
         );

@@ -1,70 +1,90 @@
 @charset "UTF-8";
 .todo-item-input {
-  padding: 16px 13px;
-  border-bottom: 1px solid #BDBDBD;
-  cursor: default; }
-  .todo-item-input span:after {
+    padding: 16px 13px;
+    border-bottom: 1px solid #BDBDBD;
+    cursor: default;
+}
+
+.todo-item-input span:after {
     font-family: FontAwesome;
     content: "";
     color: #757575;
-    margin-right: 15px; }
-  .todo-item-input input[type='text'] {
+    margin-right: 15px;
+}
+
+.todo-item-input input[type='text'] {
     border: none;
-    font-size: 16px; }
-    .todo-item-input input[type='text']:focus {
-      border: none;
-      outline: none; }
+    font-size: 16px;
+}
+
+.todo-item-input input[type='text']:focus {
+    border: none;
+    outline: none;
+}
 
 .todo-issue label {
-  display: block;
-  border-bottom: 1px solid #BDBDBD;
-  padding: 16px 0;
-  cursor: pointer; }
+    display: block;
+    border-bottom: 1px solid #BDBDBD;
+    padding: 16px 0;
+    cursor: pointer;
+}
 
 .todo-issue input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none; }
-  .todo-issue input[type="checkbox"]:focus {
-    outline: none; }
-  .todo-issue input[type="checkbox"]:before {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+}
+
+.todo-issue input[type="checkbox"]:focus {
+    outline: none;
+}
+
+.todo-issue input[type="checkbox"]:before {
     font-family: FontAwesome;
     content: "";
     color: #757575;
     font-size: 15px;
     margin: 0 10px;
-    cursor: pointer; }
-  .todo-issue input[type="checkbox"]:checked:before {
+    cursor: pointer;
+}
+
+.todo-issue input[type="checkbox"]:checked:before {
     font-family: FontAwesome;
     content: "";
     color: #757575;
     font-size: 15px;
     margin: 0 10px;
-    cursor: pointer; }
+    cursor: pointer;
+}
 
 .todo-issue label:hover span:after {
-  font-family: FontAwesome;
-  content: "\f00d";
-  float: right;
-  margin-right: 15px;
-  margin-top: 3px;
-  color: #757575;
-  display: inline-block;
-  cursor: pointer; }
-  .todo-issue label:hover span:after:hover {
-    color: #212121; }
+    font-family: FontAwesome;
+    content: "\f00d";
+    float: right;
+    margin-right: 15px;
+    margin-top: 3px;
+    color: #757575;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.todo-issue label:hover span:after:hover {
+    color: #212121;
+}
 
 .todo-header {
-  background: #03A9F4;
-  position: relative;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  height: 70px;
-  vertical-align: middle;
-  padding-left: 35px;
-  color: #FFFFFF; }
-  .todo-header input[type='text'] {
+    background: #03A9F4;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    vertical-align: middle;
+    padding-left: 35px;
+    color: #FFFFFF;
+}
+
+.todo-header input[type='text'] {
     font-weight: 300;
     border: none;
     background: #03A9F4;
@@ -72,100 +92,136 @@
     display: inline;
     width: 80%;
     color: #FFFFFF;
-    margin-top: 16px; }
-    .todo-header input[type='text']:focus {
-      border: none;
-      outline: none; }
-  .todo-header .todo-settings-icon:after {
+    margin-top: 16px;
+}
+
+.todo-header input[type='text']:focus {
+    border: none;
+    outline: none;
+}
+
+.todo-header .todo-settings-icon:after {
     font-family: FontAwesome;
     content: "";
     color: #FFFFFF;
     float: right;
     margin: 27px 18px;
-    cursor: pointer; }
+    cursor: pointer;
+}
 
 .round-button {
-  width: 56px;
-  height: 56px;
-  background: #FF4081;
-  border-radius: 28px;
-  font-size: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-left: 93%; }
-  .round-button span {
+    width: 56px;
+    height: 56px;
+    background: #FF4081;
+    border-radius: 28px;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 93%;
+}
+
+.round-button span {
     position: absolute;
     margin-left: 18px;
-    margin-top: 15px; }
-    .round-button span:after {
-      font-family: FontAwesome;
-      content: "";
-      color: #FFFFFF; }
+    margin-top: 15px;
+}
+
+.round-button span:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #FFFFFF;
+}
 
 .todo-container {
-  display: inline-table;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 30%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: white;
-  margin: 1%;
-  text-align: left; }
+    display: inline-table;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+    margin: 1%;
+    text-align: left;
+}
 
 .todo-items-list {
-  margin: auto;
-  padding-right: 0;
-  text-align: center; }
+    margin: auto;
+    padding-right: 0;
+    text-align: center;
+}
 
 .todo-list {
-  cursor: pointer; }
-  .todo-list .todo-showCompleted {
+    cursor: pointer;
+}
+
+.todo-list .todo-showCompleted {
     border-bottom: 1px solid #BDBDBD;
     color: #757575;
     padding: 8px 15px 8px 13px;
-    font-size: 13px; }
-    .todo-list .todo-showCompleted span span:hover {
-      color: #0288D1; }
-    .todo-list .todo-showCompleted .showCompleted:after {
-      font-family: FontAwesome;
-      float: right;
-      content: "\f078"; }
-    .todo-list .todo-showCompleted .hideCompleted:after {
-      font-family: FontAwesome;
-      float: right;
-      content: "\f077"; }
-  .todo-list .completed-items {
-    display: none; }
-    .todo-list .completed-items label {
-      color: #757575;
-      text-decoration: line-through; }
+    font-size: 13px;
+}
+
+.todo-list .todo-showCompleted span span:hover {
+    color: #0288D1;
+}
+
+.todo-list .todo-showCompleted .showCompleted:after {
+    font-family: FontAwesome;
+    float: right;
+    content: "\f078";
+}
+
+.todo-list .todo-showCompleted .hideCompleted:after {
+    font-family: FontAwesome;
+    float: right;
+    content: "\f077";
+}
+
+.todo-list .completed-items {
+    display: none;
+}
+
+.todo-list .completed-items label {
+    color: #757575;
+    text-decoration: line-through;
+}
 
 .todo-settings {
-  color: #757575;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  margin-right: 2%;
-  position: absolute;
-  right: 0;
-  cursor: pointer; }
-  .todo-settings div {
+    color: #757575;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    margin-right: 2%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.todo-settings div {
     border-bottom: 1px solid #757575;
     background: #FFFFFF;
-    padding: 10px; }
-  .todo-settings div:last-child {
-    border: none; }
-  .todo-settings .MarkAllAsCompleted:after {
+    padding: 10px;
+}
+
+.todo-settings div:last-child {
+    border: none;
+}
+
+.todo-settings .MarkAllAsCompleted:after {
     font-family: FontAwesome;
     content: "";
     color: #757575;
-    margin-right: 5px; }
-  .todo-settings .DeleteCompleted:after {
+    margin-right: 5px;
+}
+
+.todo-settings .DeleteCompleted:after {
     font-family: FontAwesome;
     content: "";
     color: #757575;
-    margin-right: 5px; }
+    margin-right: 5px;
+}
 
 .show {
-  display: block !important; }
+    display: block !important;
+}
 
 .hide {
-  display: none !important; }
+    display: none !important;
+}
 
 /*https://codepen.io/Sambego/pen/zDLxe/       TODO SCSS*/

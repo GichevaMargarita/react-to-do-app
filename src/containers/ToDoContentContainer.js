@@ -12,23 +12,23 @@ class ToDoContentContainer extends Component {
         };
     }
 
-    toggleCompletedShown() {
+    toggleCompletedShown = () => {
         this.setState({
             isCompletedVisible: !this.state.isCompletedVisible
         });
-    }
+    };
 
-    createToDoItemsFromList(list) {
+    createToDoItemsFromList = list => {
         return list.map((item, index) => (
             <ToDoItem
                 name={item.name}
                 isDone={item.isDone}
                 key={index}
-                deleteItem={this.props.deleteItem.bind(this)}
-                updateItem={this.props.updateItem.bind(this)}
+                deleteItem={this.props.deleteItem}
+                updateItem={this.props.updateItem}
             />
         ));
-    }
+    };
 
     render() {
         const {isCompletedVisible} = this.state;
@@ -43,9 +43,9 @@ class ToDoContentContainer extends Component {
                     {this.createToDoItemsFromList(activeItems)}
                 </div>
 
-                <ToDoInput addNewItem={this.props.addNewItem.bind(this)}/>
+                <ToDoInput addNewItem={this.props.addNewItem}/>
 
-                <div className="todo-showCompleted" onClick={this.toggleCompletedShown.bind(this)}>
+                <div className="todo-showCompleted" onClick={this.toggleCompletedShown}>
                     <span>
                         <span>({completedItems.length}) Completed Items </span>
                         <span className={classNames({

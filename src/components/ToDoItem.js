@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 
 class ToDoItem extends Component {
-    handleChange(event) {
+
+    handleChange = event => {
         const {name} = this.props;
         const isDone = event.target.checked;
         this.props.updateItem(name, isDone);
-    }
+    };
 
     render() {
         const {name, isDone, deleteItem} = this.props;
@@ -16,7 +17,7 @@ class ToDoItem extends Component {
                     <input
                         type="checkbox"
                         checked={isDone}
-                        onChange={this.handleChange.bind(this)}
+                        onChange={this.handleChange}
                     />
                     {name}
                     <span onClick={deleteItem.bind(null, name)}/>

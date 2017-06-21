@@ -5,23 +5,24 @@ class ToDoHeader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: this.props.name ? this.props.name : '',
+            title: this.props.title,
             isSettingsVisible: false
         };
     }
 
-    handleChange(event) {
-        const name = event.target.value;
-        this.setState({name});
-    }
+    handleChange = event => {
+        const title = event.target.value;
+        this.setState({title});
+    };
 
-    triggerSettings() {
+    triggerSettings = () => {
         this.setState({
             isSettingsVisible: !this.state.isSettingsVisible
         });
-    }
+    };
 
     render() {
+        // TODO Hardcode for settings(bad idea)
         const data = [{
             settingName: "Mark All As Completed",
             clickFunction: this.props.markAllItemsAsDone
@@ -30,17 +31,17 @@ class ToDoHeader extends Component {
             clickFunction: this.props.clearCompletedItems
         }];
 
-        const {name, isSettingsVisible} = this.state;
+        const {title, isSettingsVisible} = this.state;
 
         return (
             <div className="todo-header">
                 <input
                     type="text"
                     placeholder="Note title"
-                    value={name}
-                    onChange={this.handleChange.bind(this)}/>
+                    value={title}
+                    onChange={this.handleChange}/>
                 <ToDoSettings data={data} isVisible={isSettingsVisible}/>
-                <span onClick={this.triggerSettings.bind(this)} className="todo-settings-icon"/>
+                <span onClick={this.triggerSettings} className="todo-settings-icon"/>
             </div>
         );
     }

@@ -6,11 +6,12 @@ class ToDoContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            title: this.props.title ? this.props.title : '',
             items: this.props.data ? this.props.data : []
         };
     }
 
-    addNewItem(name) {
+    addNewItem = name => {
         const {items} = this.state;
 
         items.push({
@@ -19,9 +20,9 @@ class ToDoContainer extends Component {
         });
 
         this.setState({items});
-    }
+    };
 
-    deleteItem(name, event) {
+    deleteItem = (name, event) => {
         if (event) {
             event.preventDefault();
         }
@@ -29,9 +30,9 @@ class ToDoContainer extends Component {
         let items = this.state.items.filter(item => item.name !== name);
 
         this.setState({items});
-    }
+    };
 
-    updateItem(name, isDone) {
+    updateItem = (name, isDone) => {
         let items = this.state.items.slice(0);
 
         items.forEach((item) => {
@@ -41,29 +42,29 @@ class ToDoContainer extends Component {
         });
 
         this.setState({items});
-    }
+    };
 
-    clearCompletedItems() {
+    clearCompletedItems = () => {
         const items = this.state.items.filter(item => !item.isDone);
         this.setState({items});
-    }
+    };
 
-    markAllItemsAsDone() {
+    markAllItemsAsDone = () => {
         const {items} = this.state;
         items.forEach(item => (item.isDone = true));
         this.setState({items});
-    }
+    };
 
     render() {
         return (
             <div className="todo-container">
-                <ToDoHeader name={this.props.name ? this.props.name : []}
-                            clearCompletedItems={this.clearCompletedItems.bind(this)}
-                            markAllItemsAsDone={this.markAllItemsAsDone.bind(this)}/>
+                <ToDoHeader title={this.state.title}
+                            clearCompletedItems={this.clearCompletedItems}
+                            markAllItemsAsDone={this.markAllItemsAsDone}/>
                 <ToDoContentContainer items={this.state.items}
-                                   addNewItem={this.addNewItem.bind(this)}
-                                   deleteItem={this.deleteItem.bind(this)}
-                                   updateItem={this.updateItem.bind(this)}/>
+                                      addNewItem={this.addNewItem}
+                                      deleteItem={this.deleteItem}
+                                      updateItem={this.updateItem}/>
             </div>
         );
     }

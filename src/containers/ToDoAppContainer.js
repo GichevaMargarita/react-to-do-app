@@ -4,6 +4,7 @@ import ToDoContainer from "./ToDoContainer";
 import RoundButton from "../components/RoundButton";
 
 class ToDoAppContainer extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -11,12 +12,11 @@ class ToDoAppContainer extends Component {
         };
     }
 
-    addNewToDoContainer() {
+    addNewToDoContainer = () => {
         const toDos = this.state.toDos.slice(0);
         toDos.push(toDos.length);
-
         this.setState({toDos});
-    }
+    };
 
     render() {
         const {toDos} = this.state;
@@ -25,7 +25,7 @@ class ToDoAppContainer extends Component {
                 <div className="todo-items-list">
                     {toDos.map((toDo, index) => <ToDoContainer key={index}/>)}
                 </div>
-                <RoundButton onClick={this.addNewToDoContainer.bind(this)}/>
+                <RoundButton onClick={this.addNewToDoContainer}/>
             </div>
         );
     }
