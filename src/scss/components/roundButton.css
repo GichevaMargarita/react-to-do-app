@@ -7,11 +7,11 @@
   font-size: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: 93%; }
-  .round-button span {
+  .round-button .plus-icon {
     position: absolute;
     margin-left: 18px;
     margin-top: 15px; }
-    .round-button span:after {
+    .round-button .plus-icon:after {
       font-family: FontAwesome;
       content: "";
       color: #FFFFFF; }

@@ -22,7 +22,7 @@ class ToDoAppContainer extends Component {
         const {toDos} = this.state;
         return (
             <div className="app-aggregator">
-                <div className="todo-items-list">
+                <div className="todo-container-list">
                     {toDos.map((toDo, index) => <ToDoContainer key={index}/>)}
                 </div>
                 <RoundButton onClick={this.addNewToDoContainer}/>

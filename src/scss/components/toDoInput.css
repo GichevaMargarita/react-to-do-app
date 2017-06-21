@@ -3,7 +3,7 @@
   padding: 16px 13px;
   border-bottom: 1px solid #BDBDBD;
   cursor: default; }
-  .todo-item-input span:after {
+  .todo-item-input .plusToDo-icon:after {
     font-family: FontAwesome;
     content: "";
     color: #757575;

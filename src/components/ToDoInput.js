@@ -35,7 +35,7 @@ class ToDoInput extends Component {
         const {value} = this.state;
         return (
             <div className="todo-item-input">
-                <span />
+                <span className="plusToDo-icon"/>
                 <input
                     type="text"
                     placeholder="What needs to be done?"
